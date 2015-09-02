@@ -1,6 +1,8 @@
 # CommonAdapter
 通过封装BaseAdapter和RecyclerView.Adapter得到的通用的，简易的Adapter  
 
+
+这里内部集成了[AndroidAutoList:自动更新列表的AutoList ](https://github.com/zzz40500/AndroidAutoList) 这个库
 ###gradle
 /build.gradle
 ~~~
@@ -84,7 +86,7 @@ public class ManHandler extends SimpleItemHandler<ManEntity> {
 ~~~
 ViewHolder 提供一些简单的方法:     
 `setTextView(tvId, String)` 设置文字在在id为tvId上面.  
-####note:####  
+####note:  
 这里点击事件请调用:`setOnClickListener(ViewHolder vh,int vid)`或者 `setOnClickListener(ViewHolder vh)`  
 响应事件在SimpleItemHandler 中的` onClick(View v, ManEntity manEntity, int position)`中  
 这里吧数据和位置信息传递过来了;  
@@ -94,5 +96,8 @@ ViewHolder 提供一些简单的方法:
 
 够简单 够快吗?
 
+尾巴
+所以用的代码均来自AndroidAutoList 的App Demo中.
+这是一个很好的解决了Item复用的问题.
 
 
